@@ -1,0 +1,118 @@
+.block-menu_left{
+  position: fixed;
+  text-align: left;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 62px;
+  max-width: 50%;
+  $block-menu_leftHHHH: 23px;
+  $block-menu_leftPPPP: 16px 32px;
+  .block-menus{
+    display: block;
+    width: 62px;
+    height: 62px;
+    margin-bottom: 21px;
+    cursor: pointer;
+    background-color: #C2C2C2;
+    position: relative;
+    z-index: 1;
+    &:hover{
+      @include filter(invert(100%));
+    }
+  }
+  .menu-items{
+    display: block;
+    float: left;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    margin-top: -82px;
+    visibility: hidden;
+    position: relative;
+    left: 0;
+    @include animation(0s, 0s, ease-in-out, 1, departureTopItemsOut);
+  }
+  .menu-item{
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 4px;
+    left: -191px;
+    padding-right: 100px;
+    @include animation(0s, 0.5s, ease-in-out, 1, departureTopItemsOut);
+    a{
+      text-decoration: none;
+      padding: $block-menu_leftPPPP;
+      padding-bottom: 11px;
+      display: inline-block;
+      vertical-align: top;
+      &:before{
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        width: 10px;
+        content: ' ';
+        font-size: 0;
+      }
+      background-color: #9b1526;
+      .number{
+        background-color: #9b1526;
+      }
+      &:before{
+        background-color: #9b1526;
+      }
+      &:nth-child(2n+1){
+        background-color: #760d1b;
+        .number{
+          background-color: #760d1b;
+        }
+        &:before{
+          background-color: #760d1b;
+        }
+      }
+    }
+    .title{
+      color: #ffffff;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: 300;
+      margin: 0;
+    }
+    .inf{
+      font-weight: 300;
+      font-size: 10px;
+      color: #ffffff;
+      display: block;
+    }
+    .number{
+      top: 0;
+      vertical-align: top;
+      display: inline-block;
+      position: absolute;
+      padding: 19px 21px;
+      height: $block-menu_leftHHHH;
+      right: 0px;
+      color: #ffffff;
+      font-weight: 300;
+      font-size: 18px;
+      width: 23px;
+    }
+    &.hover{
+      left: 0px;
+      padding-right: 28px;
+      display: block;
+    }
+  }
+  .menu-items.open-menu{
+    @include animation(0s, 0s, ease-in-out, 1, departureTopItems);
+    visibility: visible;
+    margin-top: 0;
+    .menu-item {
+      @include animation(0s, 0.5s, ease-in-out, 1, departureTopItem);
+    }
+  }
+}

@@ -1,0 +1,230 @@
+/* =============================================
+* PhpStorm web-madmode.local
+* Author: Коноплицкий Даниил Геннадьевичь
+* Author URI: http://deatherror.ru
+* Data: 23.01.2015 18:59
+* Version: 1.0
+* Description: 
+* 
+ ============================================= */
+
+/*-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+*-_--_-_-_-_-_-_-_-_Анимации-_-_-_-_-_-_-_-_-_-_-_
+*-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-*/
+
+@mixin animation ($delay, $duration, $function, $infinite, $animation) {
+  -webkit-animation-delay: $delay; /*задает задержку анимации*/
+  -webkit-animation-duration: $duration; /*задает время проигрывания анимации*/
+  -webkit-animation-timing-function: $function; /*описывает метод расчета промежуточных значений свойств для анимаци*/
+  -webkit-animation-iteration-count: $infinite;
+  -webkit-animation-name: $animation; /*задает имя анимации*/
+  -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-timing-function: $function;
+  -moz-animation-iteration-count: $infinite;
+  -moz-animation-name: $animation;
+  -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+  -o-animation-delay: $delay;
+  -o-animation-duration: $duration;
+  -o-animation-timing-function: $function;
+  -o-animation-iteration-count: $infinite;
+  -o-animation-name: $animation;
+  -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-timing-function: $function;
+  animation-iteration-count: $infinite;
+  animation-name: $animation;
+  animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+/*анимация книпки на главной информационного слайдера*/
+@include keyframes(bottomOpacity) {
+  0% {
+    @include opacity(1);
+  }
+  50% {
+    @include opacity(0.5);
+  }
+  100% {
+    @include opacity(1);
+  }
+}
+/* Разворот меню */
+@include keyframes(MenuVisible) {
+  0% {
+    top: -110px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+/* Разворот меню */
+@include keyframes(departureTopItems) {
+  0% {
+    margin-top: -81;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+@include keyframes(departureTopItemsOut) {
+  0% {
+    margin-top: -81;
+  }
+  100% {
+    margin-top: 0;
+    visibility: hidden;
+  }
+}
+@include keyframes(departureTopItem) {
+  0% {
+    height: 4px;
+  }
+  100% {
+    height: 61px;
+  }
+}
+@include keyframes(departureTopItemOut) {
+  0% {
+    height: 61px;
+  }
+  100% {
+    height: 4px;
+  }
+}
+@include keyframes(departureLego) {
+  0% {
+   // display: block;
+    left: -207px;
+  }
+  100% {
+    left: 0px;
+   // display: table;
+  }
+}
+
+@include keyframes(sliderFlightLeftPhoto) {
+  0% {
+    visibility: hidden;
+    left: -350px;
+  }
+  100% {
+    visibility: visible;
+    left: 200px;
+  }
+}
+
+@include keyframes(sliderFlightLeftOut) {
+  0% {
+    visibility: visible;
+    left: 200px;
+  }
+  100% {
+    visibility: hidden;
+    left: -350px;
+  }
+}
+
+@include keyframes(sliderFlightRightPrice) {
+  0% {
+    visibility: hidden;
+    right: -100px;
+  }
+  100% {
+    visibility: visible;
+    right: 131px;
+  }
+}
+
+@include keyframes(anim-1) {
+  0% {
+    @include opacity(0);
+    @include transform(translate3d(1em, 0, 0));
+  }
+  51% {
+    @include opacity(0);
+    @include transform(translate3d(-1em, -40%, 0));
+  }
+  100% {
+    @include opacity(0);
+    @include transform(translate3d(0, -40%, 0));
+    top: -9px;
+  }
+}
+
+@include keyframes(FadeIn) {
+  0% {
+    @include opacity(0);
+    @include text-shadow(0 0 50px #292929);
+  }
+  100% {
+    @include opacity(0.8);
+    @include text-shadow(0 0 1px #292929);
+  }
+}
+
+@include keyframes(OpeningSequence) {
+  $color: #292929;
+  0% {
+    @include text-shadow(0 0 50px $color);
+    letter-spacing: 80px;
+    @include opacity(0);
+    @include transform(rotateY(-90deg));
+  }
+
+  50% {
+    @include text-shadow(0 0 1px $color);
+    letter-spacing: 14px;
+    @include opacity(0.8);
+    @include transform(rotateY(0deg));
+  }
+  85% {
+    @include text-shadow(0 0 1px $color);
+    @include opacity(0.8);
+    @include transform(rotateY(0deg) translateZ(100px));
+  }
+  100% {
+    @include text-shadow(0 0 10px $color);
+    @include opacity(0);
+    @include transform(translateZ(130px));
+    pointer-events: none;
+  }
+}
+
+@include keyframes(OpeningSequenceEnd) {
+  $color: #292929;
+  0% {
+    @include text-shadow(0 0 50px $color);
+    letter-spacing: 80px;
+    @include opacity(0);
+    @include transform(rotateY(-90deg));
+  }
+  100% {
+    @include text-shadow(0 0 1px $color);
+    letter-spacing: 14px;
+    @include opacity(0.8);
+  }
+}
+
+

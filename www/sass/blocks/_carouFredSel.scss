@@ -1,0 +1,192 @@
+.block_list-pagination{
+  margin-top: 4px;
+  margin-bottom: 30px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  text-align: center;
+  a{
+    cursor: pointer;
+    span{
+      display: none;
+      text-decoration: none;
+      font-size: 0px;
+    }
+    margin: 0 10px;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    &.selected{
+      span {
+        background-position: -11px 0;
+      }
+    }
+  }
+  &.type-slider{
+    a{
+      span {
+        background-image: url("#{$img-dir}/pagination_slider_li.png");
+        background-position: -45px 0;
+        background-repeat: no-repeat;
+        width: 42px;
+        height: 42px;
+      }
+      &.selected{
+        span {
+          background-position: 0px 0;
+        }
+      }
+    }
+  }
+}
+
+.block_des-block_lis-navi{
+  position: absolute;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin-top: 0px;
+  a{
+    margin: 0 -3px;
+    cursor: pointer;
+    width: 67px;
+    height: 67px;
+    display: inline-block;
+    vertical-align: top;
+    background-image: url("#{$img-dir}/block_lis-navi.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+  }
+  .nivo-nextNavSlider{
+    background-position: 0 0;
+  }
+  .nivo-prevNavSlider{
+    background-position: -67px 0;
+  }
+}
+
+.caroufredsel_slider{
+  height: 100% !important;
+}
+
+.nivoSlider{
+  width: 100% !important;
+  height: 100% !important;
+  .slider-item{
+    background-color: #ffffff;
+    width: 100%;
+    height: 100% !important;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    position: relative;
+    &[slider="n1"]{
+      background-image: url('#{$img-dir}/slider/index.jpg');
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: center;
+      h1{
+        text-align: center;
+        margin: 0 auto;
+        font-family: $default-font;
+        margin-top: auto;
+        font-weight: lighter;
+        font-size: 45pt;
+        margin-bottom: 40%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+    &[slider="n2"] {
+      background-image: url('#{$img-dir}/slider/index_n.jpg');
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: center;
+      h1{
+        margin-top: 74px;
+        text-align: center;
+      }
+      img{
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 600px;
+        max-width: 500px;
+      }
+    }
+    &[slider="n3"] {
+      background-image: url('#{$img-dir}/slider/index_n.jpg');
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: center;
+      h1{
+        margin-top: 74px;
+        text-align: center;
+      }
+      img{
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+        display: block;
+        margin-bottom: 600px;
+        @include opacity(0);
+      }
+    }
+    &[slider="n4"] {
+      h1{
+        LEFT: 0;
+        right: 0;
+        position: absolute;
+        text-align: center;
+        margin-top: 68%;
+        font-size: 30pt;
+        font-family: $default-font;
+        font-weight: lighter;
+        @include opacity(0);
+        @include text-shadow(0px 0px 2px #251113);
+        @include transform(0.6s);
+      }
+      .icon{
+        background-image: url('#{$img-dir}/slider/end-t.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        position: absolute;
+        top: -200px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 200px;
+        max-width: 25%;
+        margin: 0 auto;
+        @include transform(0.6s ease 0.5s);
+      }
+      &:after{
+        content: ' ';
+        font-size: 0;
+        position: absolute;
+        bottom: -70px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 200px;
+        background-image: url('#{$img-dir}/slider/end-b.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+      }
+    }
+  }
+}

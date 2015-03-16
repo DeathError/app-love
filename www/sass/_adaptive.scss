@@ -1,0 +1,14 @@
+/* =============================================
+* PhpStorm web-madmode.local
+* Author: Коноплицкий Даниил Геннадьевичь
+* Author URI: http://deatherror.ru
+* Data: 22.01.2015 11:53
+* Version: 1.0
+* Description: 
+* 
+ ============================================= */
+@media print { /* Стиль для печати */
+  a[href^=http]:after { //ссылки на бумаги видно теперь
+    content:" <" attr(href) ">"
+  }
+}
